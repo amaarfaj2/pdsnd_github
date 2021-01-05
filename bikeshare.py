@@ -202,11 +202,11 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
+        view_data = input('\nWould you like to view 10 rows of individual trip data? Enter yes or no\n')
         start_loc = 0
         while view_data.lower()!='no':
-            print(df.iloc[0:start_loc+5])
-            start_loc += 5
+            print(df.iloc[0:start_loc+10])
+            start_loc += 10
             view_display = input("Do you wish to continue?: ")
 
 
