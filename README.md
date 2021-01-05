@@ -3,7 +3,7 @@ Date created: 01/05/2021
 Project Title: Explore US Bikeshare Data
 
 Description:
-This project utilizes Python to explore bike share systems data for three cities in the US which are Chicago, New York City and Washington. This project imports city data and answer several questions by computing descriptive statistics.
+This project utilizes Python to explore bike share systems data for three cities in the US which are Chicago, New York City and Washington. This project imports city data and answer several questions by computing descriptive statistics. This project can also provide raw input for the user.
 
 Files used:
 chicago.csv
