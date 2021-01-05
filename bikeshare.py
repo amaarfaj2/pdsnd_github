@@ -5,7 +5,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 def get_filters():
-    
+
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -20,7 +20,7 @@ def get_filters():
     check=True
     while check:
         city=input('Would you like to see data for Chicago, New York City or Washington?')
-        
+
         if city.lower()=='chicago':
             check=False
         elif city.lower()=='new york city':
@@ -33,17 +33,17 @@ def get_filters():
         city_info=pd.read_csv('new_york_city.csv')
     elif city.lower()=='washington':
         city_info=pd.read_csv('washington.csv')
-    
-  
+
+
     # TO DO: get user input for month (all, january, february, ... , june)
-    
+
     df=city_info
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     month=()
     check=True
     while check:
-        months = ['january', 'february', 'march', 'april', 'may', 'june']  
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
         month=input('Would you like to filter data by month? If yes choose month. If no type "all". ')
         month=month.lower()
         if month in months:
@@ -52,16 +52,16 @@ def get_filters():
            check=False
         elif month=='all':
            check=False
-        
 
-    
-    
+
+
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     day=()
     check=True
-    while check:      
-        day=input('Would you like to filter data by day?. if yes specify the day or type "all". ')
+    while check:
+        day=input('Would you like to filter data by day?. if yes pleas specify the day. If no please type "all". ')
         day=day.title()
         print(day)
         if day != 'All':
@@ -72,7 +72,7 @@ def get_filters():
 
     print('-'*40)
     return city, month, day
-    
+
 
 def load_data(city, month, day):
     """
@@ -187,7 +187,7 @@ def user_stats(df):
         print('most common birth year is ',common)
     except KeyError:
         print('Birth year column does not exist')
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -208,8 +208,8 @@ def main():
             print(df.iloc[0:start_loc+5])
             start_loc += 5
             view_display = input("Do you wish to continue?: ")
-        
-        
+
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
